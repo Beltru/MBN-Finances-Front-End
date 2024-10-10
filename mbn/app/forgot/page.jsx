@@ -1,7 +1,7 @@
 import Image from "next/image";
-import "./register.css"
+import "./forgot.css"
 
-export default function Register() {
+export default function Forgot() {
     return (
         <div className="bg-gradient-to-r from-[#080c2c] via-[#0d1449] to-black overflow-hidden">
            <main className="">
@@ -14,26 +14,15 @@ export default function Register() {
                 
                 <div className="flex justify-center items-center rounded-xl w-[40vw] h-[100vw] bg-black hover:w-[55vw] transition-all duration-500 rounded-l-lg">
                     <form action="#" className="w-[50%] ">
-                        <h2>Register</h2>
-                        <div className="input-field">
-                            <input type="text" required/>
-                            <label>Name</label>
-                        </div>
+                        <h2>Forgot password</h2>
                         <div className="input-field">
                             <input type="text" required/>
                             <label>Email</label>
                         </div>
-                        <div className="input-field">
-                            <input type="password" required/>
-                            <label>Password</label>
-                        </div>
-                        <div className="input-field">
-                            <input type="password" required/>
-                            <label>Confirm password</label>
-                        </div>
-                        <button type="submit">Register</button>
+                       
+                        <button type="submit">Reset password</button>
                         <div className="register">
-                        <p>Already have an account?</p> <p><a href="http://localhost:3000/login">Log in</a></p>
+                          <a href="http://localhost:3000/login">🡐 Back to login</a>
                         </div>
                     </form>
                 </div>

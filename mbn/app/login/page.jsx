@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Navbar from "../../components/Navbar";
+
 import "./login.css"
 
 export default function Login() {
     return (
-        <div className="bg-gradient-to-r from-[#0f0015] via-[#080c2c] to-black overflow-hidden">
+        <div className="bg-gradient-to-r from-[#080c2c] via-[#0d1449] to-black overflow-hidden">
            <main className="">
             <section className="h-[100vh] w-[100vw] flex justify-between items-center">
               <div className="ml-[15vw]"> 
@@ -29,7 +29,7 @@ export default function Login() {
                                 <input type="checkbox" id="remember"/>
                                 <p>Remember me</p>
                             </label>
-                            <a href="#">Forgot password?</a>
+                            <a href="http://localhost:3000/forgot">Forgot password?</a>
                         </div>
                         <button type="submit">Log In</button>
                         <div className="register">
