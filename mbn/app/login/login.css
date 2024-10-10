@@ -28,7 +28,6 @@ h2 {
 .input-field {
   position: relative;
   border-bottom: .1vw solid #ccc;
-  margin: 1vw 0;
 }
 
 .input-field label {
