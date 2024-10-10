@@ -71,6 +71,7 @@ h2 {
 #remember {
   accent-color: #fff;
   font-family: "Raleway", sans-serif;
+  cursor: pointer;
 }
 
 .forget label {
@@ -103,5 +104,6 @@ button:hover {
 .register {
   text-align: center;
   margin-top: 30px;
-  color: #fff;
+  color: #ffffffaf;
 }
+

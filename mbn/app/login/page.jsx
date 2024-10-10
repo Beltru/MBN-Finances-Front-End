@@ -33,7 +33,7 @@ export default function Login() {
                         </div>
                         <button type="submit">Log In</button>
                         <div className="register">
-                            <p>Don't have an account?</p> <p><a href="http://localhost:3000/register">Register</a></p>
+                            <p>Don't have an account?</p> <p><a href="http://localhost:3000/register" className="hover:text-[#ffffffe5] transition-all duration-300">Register</a></p>
                         </div>
                     </form>
                 </div>
