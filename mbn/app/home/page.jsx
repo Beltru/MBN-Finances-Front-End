@@ -12,16 +12,16 @@ export default function Home() {
       </nav>
       <main className="grid grid-cols-12 gap-[8vw] w-[95vw] h-[80vh]">
         <aside className="col-span-3 space-y-4 flex justify-between flex-col bg-gray-800 rounded-lg p-4">
-          <div className="flex flex-col justify-between h-[50%]">
+          <div className="justify-between h-[50%]">
             
-            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-2 duration-500">Dinero en cuenta</button>
-            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-2 duration-500">Ahorros</button>
-            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-2 duration-500">Gastos</button>
-            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-2 duration-500">etc</button>
+            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Dinero en cuenta</button>
+            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Ahorros</button>
+            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Gastos</button>
+            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">etc</button>
             </div>
 
           <div>
-            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-2 duration-500">Help</button>
+            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Help</button>
           </div>
         </aside>
 
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
 
           {/* Caja de Gastos */}
-          <div className="col-span-8 p-4 border-spacing-1 color bg-gray-800 rounded-lg flex flex-col">
+          <div className="col-span-8 p-4 ml-[-28px] border-spacing-1 color bg-gray-800 rounded-lg flex flex-col">
             <Gastos/>
           </div>
    

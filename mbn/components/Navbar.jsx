@@ -8,7 +8,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex space-x-4">
-            <ul className="flex flex-row justify-around w-[15vw] items-center">
+            <ul className="flex flex-row justify-around w-[21vw] items-center">
               <li>Bienvenido Beltran Cid</li>
               <li><img src="/profile-photo.jpg" alt="" className="rounded-full"/></li>
               <li><img src="settings.png" alt="" className="w-[1.5vw]"/></li>
