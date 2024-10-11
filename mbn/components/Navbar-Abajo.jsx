@@ -70,12 +70,12 @@ const Navbar = () => {
             <li className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem] font-medium">
               Support
             </li>
-            <li className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem] font-medium">
+            <a href="http://localhost:3000/login" className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem] font-medium">
               Login
-            </li>
-            <li className="px-3 py-1 rounded-lg flex items-center justify-center bg-red-600 hover:hover:bg-red-700 duration-500 cursor-pointer mr-2 text-[0.95rem] font-bold">
+            </a>
+            <a href="http://localhost:3000/register" className=" px-3 py-1 rounded-lg flex items-center justify-center bg-red-600 hover:hover:bg-red-700 duration-500 cursor-pointer mr-2 text-[0.95rem] font-bold">
               Sign Up
-            </li> 
+            </a> 
           </ul>
         </div>
       </nav>

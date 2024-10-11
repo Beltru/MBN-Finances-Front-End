@@ -60,7 +60,7 @@ const ScrollCard: React.FC = () => {
   }, []);
 
   return (
-    <section className="h-[250vh] w-[100vw] flex items-start justify-center bg-[#0e0e0e] border-t border-[#CCCCCC]">
+    <section className="h-[250vh] flex items-start justify-center border-t-2 border-[#CCCCCC]">
       <div className="relative flex flex-col items-center justify-center">
         <div className="relative flex flex-row items-end justify-center">
           <div
@@ -74,8 +74,8 @@ const ScrollCard: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.3 }}
-                className=""
-              >
+                className="">
+              
                 <div className="">
                   <img src={cardData[currentIndex].img} alt="" className='w-[50vw] max-h-[34vh]' />
                 </div>
