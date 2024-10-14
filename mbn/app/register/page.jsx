@@ -22,7 +22,7 @@ export default function Register() {
     };
 
     return (
-        <div className="bg-gradient-to-r from-[#080c2c] via-[#0d1449] to-black overflow-hidden">
+        <div className="bg-gradient-to-r from-[#080c2c] via-[#292d47] to-black overflow-hidden">
             <main>
                 <section className="h-[100vh] w-[100vw] flex justify-between items-center">
                     <div className="h-[100vh] w-[60vw] flex justify-end items-center pr-[17%]"> 

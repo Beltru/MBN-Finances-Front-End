@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const cardData = [
   {
-    img: "/chrome-web-store.png",
+    img: "iMac Pro Render.png",
     heading: "Earn",
     subtext: "Fund your account by raising capital or transferring funds from an external account."
   },
@@ -65,7 +65,7 @@ const ScrollCard: React.FC = () => {
         <div className="relative flex flex-row items-end justify-center">
           <div
             ref={cardRef}
-            className="w-[50vw] h-[40vh] p-8 bg-white rounded-lg shadow-lg flex justify-center items-center"
+            className="w-[40vw] h-[45vh] p-8 bg-gray-600 bg-opacity-30 border border-opacity-30 border-gray-900 rounded-lg shadow-lg flex justify-center items-center"
           >
             <AnimatePresence mode='wait'>
               <motion.div
@@ -76,8 +76,8 @@ const ScrollCard: React.FC = () => {
                 transition={{ duration: 0.3 }}
                 className="">
               
-                <div className="">
-                  <img src={cardData[currentIndex].img} alt="" className='w-[50vw] max-h-[34vh]' />
+                <div className="w-[40vw] h-[40vh] flex justify-center items-center">
+                  <img src={cardData[currentIndex].img} alt="" className='w-[30vw] max-h-[54vh]' />
                 </div>
               </motion.div>
             </AnimatePresence>
