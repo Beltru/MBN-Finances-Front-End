@@ -3,7 +3,7 @@ import "./forgot.css"
 
 export default function Forgot() {
     return (
-        <div className="bg-gradient-to-r from-[#080c2c] via-[#0d1449] to-black overflow-hidden">
+        <div className="bg-gradient-to-r from-[#080c2c] via-[#292d47] to-black overflow-hidden">
            <main className="">
             <section className="h-[100vh] w-[100vw] flex justify-between items-center">
               <div className="ml-[15vw]"> 
