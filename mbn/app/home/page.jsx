@@ -1,3 +1,7 @@
+"use client"
+import { useState } from 'react';
+
+import Modal from "../../components/Modal";
 import Grafico from "../../components/Grafico"
 import Resumen from "../../components/Resumen"
 import Gastos from "../../components/Gastos"
@@ -5,6 +9,7 @@ import Navbar from "../../components/Navbar";
 
 
 export default function Home() {
+ 
   return (
     <div className="pt-24 p-8 min-h-screen bg-gradient-to-r from-black via-gray-900 to-black text-white overflow-hidden">
       <nav>
@@ -50,7 +55,7 @@ export default function Home() {
               progress2={70}
             />
           </div>
-          
+
           
           {/* Caja de Gráfico */}
           <div className="col-span-7 ml-[-7rem] col-start-6 p-4 bg-gray-800 rounded-lg">

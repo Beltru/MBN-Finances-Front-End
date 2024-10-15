@@ -1,6 +1,7 @@
 "use client";
+import Modal from "../components/Modal";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Gastos_Dia = ({ dia, gastos }) => {
   const barRef = useRef(null);
@@ -29,9 +30,15 @@ const Gastos_Dia = ({ dia, gastos }) => {
 };
 
   const Gastos = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
     return (
       <div>
-        <p className="text-lg">Gastos</p>
+        <button onClick={openModal} className="text-lg border-b-2">Gastos</button>
+        <Modal isOpen={isModalOpen} onClose={closeModal} />
         <div className="flex justify-between mt-4">
           <Gastos_Dia dia="Lun" gastos="24" />
           <Gastos_Dia dia="Mar" gastos="12" />
