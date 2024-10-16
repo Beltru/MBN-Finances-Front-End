@@ -17,7 +17,7 @@ const Gastos_Dia = ({ dia, gastos }) => {
     return (
       <div className="space-y-1">
         <p>{dia}</p>
-        <div className="flex flex-col-reverse">
+        <div className="flex flex-col-reverse items-center">
           <div
             ref={barRef}
             className="bg-blue-600 rounded-lg transition-height duration-500 ease-in-out"

@@ -11,11 +11,11 @@ const Navbar = () => {
       const handleScroll = () => {
         const scrollPosition = window.scrollY;
         
-        if (scrollPosition < 300) {
+        if (scrollPosition < 2000) {
           setActiveCard(1);
-        } else if (scrollPosition >= 300 && scrollPosition < 800) {
+        } else if (scrollPosition >= 2000 && scrollPosition < 2700) {
           setActiveCard(2);
-        } else if (scrollPosition >= 800) {
+        } else if (scrollPosition >= 2700) {
           setActiveCard(3);
         }
       };
