@@ -17,13 +17,13 @@ export default function Modal({ isOpen, onClose }) {
          </div>
          
         <div className="flex justify-between mt-4">
-          <Gastos_Dia dia="Lun" gastos="24" />
-          <Gastos_Dia dia="Mar" gastos="12" />
-          <Gastos_Dia dia="Mie" gastos="6" />
-          <Gastos_Dia dia="Jue" gastos="8" />
-          <Gastos_Dia dia="Vie" gastos="4" />
-          <Gastos_Dia dia="Sab" gastos="22" />
-          <Gastos_Dia dia="Dom" gastos="20" />
+          <div className='flex flex-col items-center'><Gastos_Dia dia="Lun" gastos="24" /><p>$92.000</p></div>
+          <div className='flex flex-col items-center'><Gastos_Dia dia="Mar" gastos="12" /><p>$42.000</p></div>
+          <div className='flex flex-col items-center'><Gastos_Dia dia="Mie" gastos="6" /><p>$27.000</p></div>
+          <div className='flex flex-col items-center'><Gastos_Dia dia="Jue" gastos="8" /><p>$35.000</p></div>
+          <div className='flex flex-col items-center'><Gastos_Dia dia="Vie" gastos="4" /><p>$12.000</p></div>
+          <div className='flex flex-col items-center'><Gastos_Dia dia="Sab" gastos="22" /><p>$82.000</p></div>
+          <div className='flex flex-col items-center'><Gastos_Dia dia="Dom" gastos="20" /><p>$75.000</p></div>
         </div>
         
        
