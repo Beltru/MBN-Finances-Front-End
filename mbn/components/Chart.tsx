@@ -151,7 +151,7 @@ const Chart = () => {
         </div>
         <div className="flex">
           {["desktop", "mobile"].map((key) => {
-            const chart = key as keyof typeof chartConfig
+            const chart = key as keyof typeof chartConfig;
             return (
               <button
                 key={chart}
@@ -163,10 +163,10 @@ const Chart = () => {
                   {chartConfig[chart].label}
                 </span>
                 <span className="text-lg font-bold leading-none sm:text-3xl">
-                  {total[key as keyof typeof total].toLocaleString()}
+                  {new Intl.NumberFormat('es-ES').format(total[key as keyof typeof total])}
                 </span>
               </button>
-            )
+            );
           })}
         </div>
       </CardHeader>
