@@ -57,20 +57,6 @@ export default function Home() {
           
           {/* Caja de Gráfico */}
           <div className="col-span-7 ml-[-7rem] col-start-6 p-4 bg-gray-800 rounded-lg">
-            <div className="flex justify-between">
-              <div>
-                <p className="text-xl font-bold -mt-2">$87,743</p>
-                <p>Total assets</p>
-              </div>
-              <div>
-                <p className="text-xl font-bold -mt-2">$78,342</p>
-                <p>Total deposits</p>
-              </div>
-              <div>
-                <p className="text-xl font-bold -mt-2">+12.3%</p>
-                <p>APY</p>
-              </div>
-            </div>
             <div className="mt-2 relative">
               <div className="bg-gray-700 rounded mt-4">
                 <Chart/>
