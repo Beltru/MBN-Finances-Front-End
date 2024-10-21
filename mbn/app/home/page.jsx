@@ -1,10 +1,10 @@
 "use client"
 import { useState } from 'react';
 
-import Modal from "../../components/modals/Modal-Gastos";
 import Resumen from "../../components/Resumen"
 import Gastos from "../../components/Gastos"
 import Navbar from "../../components/Navbar";
+import Chart from "../../components/Chart";
 
 
 export default function Home() {
@@ -73,7 +73,7 @@ export default function Home() {
             </div>
             <div className="mt-2 relative">
               <div className="bg-gray-700 rounded mt-4">
-                
+                <Chart/>
               </div>
             </div>
           </div>
