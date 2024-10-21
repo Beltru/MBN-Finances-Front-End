@@ -1,5 +1,5 @@
 "use client";
-import Modal from "../components/Modal";
+import Modal from "./modals/Modal-Gastos";
 import Gastos_Dia from "./Gastos_dia"
 import { useEffect, useRef, useState } from 'react';
 
@@ -11,7 +11,7 @@ import { useEffect, useRef, useState } from 'react';
 
     return (
       <div>
-        <button onClick={openModal} className="text-lg border-b-2">Gastos</button>
+        <button onClick={openModal} className="text-lg border-b-2 border-gray-500 hover:border-white transition-all duration-500">Gastos</button>
         <Modal isOpen={isModalOpen} onClose={closeModal} />
         <div className="flex justify-between mt-4">
           <Gastos_Dia dia="Lun" gastos="24" />

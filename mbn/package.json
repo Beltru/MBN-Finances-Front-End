@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "add": "^2.0.6",
+    "chart": "^0.1.2",
     "chart.js": "^4.4.3",
     "framer-motion": "^11.11.7",
     "gsap": "^3.12.5",
     "next": "^14.2.15",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "recharts": "^2.13.0",
+    "shadcn": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "22.7.3",

@@ -1,7 +1,7 @@
 "use Client"
 import { useState } from 'react';
-import Grafico from "./Grafico";
-import Gastos_Dia from "./Gastos_dia"
+import Grafico from "../Grafico";
+import Gastos_Dia from "../Gastos_dia"
 
 export default function Modal({ isOpen, onClose }) {
   if (!isOpen) return null;

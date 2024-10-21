@@ -1,8 +1,8 @@
 "use client"
 import { useState } from 'react';
 
-import Modal from "../../components/Modal";
-import Grafico from "../../components/Grafico"
+import Modal from "../../components/modals/Modal-Gastos";
+import Grafico from "../../components/Chart"
 import Resumen from "../../components/Resumen"
 import Gastos from "../../components/Gastos"
 import Navbar from "../../components/Navbar";
@@ -50,7 +50,7 @@ export default function Home() {
           {/* Caja de Resumen */}
           <div className="col-span-4 ml-[-6rem] p-4 bg-gray-800 rounded-lg">
             <Resumen
-              mes={"Agosto"}
+              mes={"August"}
               progress1={50}
               progress2={70}
             />
