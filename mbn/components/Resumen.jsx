@@ -3,7 +3,7 @@
 import Modal from "./modals/Modal-Resumen";
 import { useEffect, useRef, useState } from 'react';
 
-const ResumenAgosto = ({ progress1, progress2, mes}) => {
+const Resumen = ({ progress1, progress2, mes}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -11,7 +11,7 @@ const ResumenAgosto = ({ progress1, progress2, mes}) => {
 
   return (
     <div className="p-4 bg-gray-800 rounded">
-      <button className="text-lg border-b-2 mb-4 border-gray-500 hover:border-white transition-all duration-500" onClick={openModal}>Resumen {mes}</button>
+      <button className="text-lg border-b-2 mb-4 border-gray-500 hover:border-white transition-all duration-500" onClick={openModal}>{mes}´ s Summary </button>
       <Modal isOpen={isModalOpen} onClose={closeModal} mes={mes} progress1={progress1} progress2={progress2}/>
       <div className="space-y-4">
         <div>
@@ -37,4 +37,4 @@ const ResumenAgosto = ({ progress1, progress2, mes}) => {
   );
 };
 
-export default ResumenAgosto;
+export default Resumen;

@@ -1,6 +1,6 @@
 "use client";
 import Modal from "./modals/Modal-Gastos";
-import Gastos_Dia from "./Gastos_dia"
+import Gastos_Dia from "./Gastos_semanales"
 import { useEffect, useRef, useState } from 'react';
 
   const Gastos = () => {

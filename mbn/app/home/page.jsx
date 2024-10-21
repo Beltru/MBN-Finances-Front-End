@@ -2,7 +2,6 @@
 import { useState } from 'react';
 
 import Modal from "../../components/modals/Modal-Gastos";
-import Grafico from "../../components/Chart"
 import Resumen from "../../components/Resumen"
 import Gastos from "../../components/Gastos"
 import Navbar from "../../components/Navbar";
@@ -20,10 +19,9 @@ export default function Home() {
           <div className="justify-between h-[50%]">
             
             <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Dinero en cuenta</button>
-            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Ahorros</button>
             <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Gastos</button>
-            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">etc</button>
-            </div>
+            
+          </div>
 
           <div>
             <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Help</button>
@@ -75,7 +73,7 @@ export default function Home() {
             </div>
             <div className="mt-2 relative">
               <div className="bg-gray-700 rounded mt-4">
-                <Grafico/>
+                
               </div>
             </div>
           </div>
