@@ -77,7 +77,7 @@ const Gastos = () => {
                 position="top"
                 offset={12}
                 className="fill-foreground"
-                fontSize={13}
+                fontSize={11}
               />
             </Bar>
           </BarChart>

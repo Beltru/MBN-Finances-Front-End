@@ -10,7 +10,7 @@ import Chart from "../../components/Chart";
 export default function Home() {
  
   return (
-    <div className="pt-24 p-8 min-h-screen bg-gradient-to-r from-black via-gray-900 to-black text-white overflow-hidden">
+    <div className="pt-20 p-8 h-[100vh] bg-gradient-to-r from-black via-gray-900 to-black text-white overflow-hidden">
       <nav>
         <Navbar/>
       </nav>
@@ -28,11 +28,11 @@ export default function Home() {
           </div>
         </aside>
 
-        <section className="col-span-9 grid grid-cols-12 gap-x-[4vw] gap-y-[3vh]">
+        <section className="col-span-9 grid grid-cols-12 gap-x-[4vw] gap-y-[3vh] sm:gap-x-[2vw] sm:gap-y-[1.5vh]">
 
 
           {/* Caja de Dinero en Cuenta */}
-          <div className="col-span-4 ml-[-6rem] p-4 bg-gray-800 rounded-lg">          
+          <div className="col-span-4 row-span-1 ml-[-25%] p-4 bg-gray-800 rounded-lg">          
             <p className="text-lg">Dinero en cuenta:</p>
             <p className="text-3xl font-bold">142,749 $</p><br></br>
             <p className="text-lg">Dinero transferido:</p>
@@ -46,7 +46,7 @@ export default function Home() {
    
 
           {/* Caja de Resumen */}
-          <div className="col-span-4 p-4 ml-[-6.5vw] mt-[2vw] bg-gray-800 rounded-lg border border-[#CCCCCC]">
+          <div className="col-span-4 p-4 ml-[-27%] mt-[2vw] bg-gray-800 rounded-lg border border-[#CCCCCC]">
             <Resumen
               mes={"August"}
               progress1={50}

@@ -33,10 +33,8 @@ const chartData = [
   { date: "2024-09-01", desktop: 59, mobile: 110 },
   { date: "2024-10-01", desktop: 261, mobile: 190 },
   { date: "2024-11-01", desktop: 327, mobile: 350 },
-  { date: "2024-12-01", desktop: 292, mobile: 210 }, // Diciembre corregido
+  { date: "2024-12-01", desktop: 292, mobile: 210 }, 
 ];
-
-// Exportar los datos si se va a usar en otro módulo
 
 
 const chartConfig = {
@@ -68,11 +66,8 @@ const Chart = () => {
   return (
     <Card>
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
-        <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-          <CardTitle>Line Chart - Interactive</CardTitle>
-          <CardDescription>
-            Showing total expenses from the last 12 months
-          </CardDescription>
+        <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-2">
+          <CardTitle>Yearly Expenses</CardTitle>
         </div>
         <div className="flex">
           {["desktop", "mobile"].map((key) => {
@@ -81,13 +76,13 @@ const Chart = () => {
               <button
                 key={chart}
                 data-active={activeChart === chart}
-                className="flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
+                className="flex flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-4"
                 onClick={() => setActiveChart(chart)}
               >
                 <span className="text-xs text-muted-foreground">
                   {chartConfig[chart].label}
                 </span>
-                <span className="text-lg font-bold leading-none sm:text-3xl">
+                <span className="text-lg font-bold leading-none sm:text-xl">
                   {new Intl.NumberFormat('es-ES').format(total[key as keyof typeof total])}
                 </span>
               </button>
@@ -98,7 +93,7 @@ const Chart = () => {
       <CardContent className="px-2 sm:p-6">
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-[250px] w-full"
+          className="aspect-auto h-[15vh] w-full"
         >
           <LineChart
             accessibilityLayer
