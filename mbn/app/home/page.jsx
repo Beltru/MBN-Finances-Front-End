@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 import Resumen from "../../components/Resumen"
-import Gastos from "../../components/Gastos"
+import Gastos from "../../components/Gastos-semanales"
 import Navbar from "../../components/Navbar";
 import Chart from "../../components/Chart";
 

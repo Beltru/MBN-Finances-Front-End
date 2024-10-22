@@ -23,13 +23,13 @@ import {
 export const description = "A bar chart with a label"
 
 const chartData = [
-  { month: "Monday", desktop: 14312 },
-  { month: "Tuesday", desktop: 8342 },
-  { month: "Wednesday", desktop: 2550 },
-  { month: "Thursday", desktop: 10973 },
-  { month: "Friday", desktop: 19032 },
-  { month: "Saturday", desktop: 16130 },
-  { month: "Sunday", desktop: 9233 }
+  { date: "Monday", desktop: 14312 },
+  { date: "Tuesday", desktop: 8342 },
+  { date: "Wednesday", desktop: 2550 },
+  { date: "Thursday", desktop: 10973 },
+  { date: "Friday", desktop: 19032 },
+  { date: "Saturday", desktop: 16130 },
+  { date: "Sunday", desktop: 9233 }
 ]
 
 const chartConfig = {
@@ -57,12 +57,11 @@ const Gastos = () => {
           >
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey="month"
+              dataKey="date"
               tickLine={false}
               tickMargin={10}
               axisLine={false}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
+              />
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent hideLabel />}

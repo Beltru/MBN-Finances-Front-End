@@ -21,6 +21,8 @@ import {
 export const description = "An interactive line chart"
 
 const chartData = [
+  // Datos de tráfico mensual para 2024, corregidos
+  { date: "2024-01-01", desktop: 91, mobile: 1800 },
   { date: "2024-02-01", desktop: 97, mobile: 180 },
   { date: "2024-03-01", desktop: 167, mobile: 120 },
   { date: "2024-04-01", desktop: 242, mobile: 260 },
@@ -31,10 +33,11 @@ const chartData = [
   { date: "2024-09-01", desktop: 59, mobile: 110 },
   { date: "2024-10-01", desktop: 261, mobile: 190 },
   { date: "2024-11-01", desktop: 327, mobile: 350 },
-  { date: "2024-12-01", desktop: 292, mobile: 210 },
-  { date: "2024", desktop: 222, mobile: 150 }, 
-  { date: "2024", desktop: 222, mobile: 150 },  
-]
+  { date: "2024-12-01", desktop: 292, mobile: 210 }, // Diciembre corregido
+];
+
+// Exportar los datos si se va a usar en otro módulo
+
 
 const chartConfig = {
   views: {
@@ -112,9 +115,7 @@ const Chart = () => {
               minTickGap={12}
               tickFormatter={(value) => {
                 const date = new Date(value)
-                return date.toLocaleDateString("en-US", {
-                  month: "short",
-                })
+                return date.toLocaleDateString("en-US", {month: "short",})
               }}
             />
             <ChartTooltip
@@ -123,9 +124,7 @@ const Chart = () => {
                   className="w-[150px]"
                   nameKey="views"
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
-                      month: "short"
-                    })
+                    return new Date(value).toLocaleDateString("en-US", { month: "short"})
                   }}
                 />
               }
