@@ -23,12 +23,13 @@ import {
 export const description = "A bar chart with a label"
 
 const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "Monday", desktop: 14312 },
+  { month: "Tuesday", desktop: 8342 },
+  { month: "Wednesday", desktop: 2550 },
+  { month: "Thursday", desktop: 10973 },
+  { month: "Friday", desktop: 19032 },
+  { month: "Saturday", desktop: 16130 },
+  { month: "Sunday", desktop: 9233 }
 ]
 
 const chartConfig = {
@@ -43,7 +44,7 @@ const Gastos = () => {
   return (
     <Card>
       <CardHeader>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardDescription>Weekly Expenses</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
@@ -77,12 +78,9 @@ const Gastos = () => {
           </BarChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
+      <CardFooter className="flex-col items-start my-2 text-sm">
         <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
+          Showing this week's expenses
         </div>
       </CardFooter>
     </Card>

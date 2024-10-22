@@ -46,7 +46,7 @@ export default function Home() {
    
 
           {/* Caja de Resumen */}
-          <div className="mt-[1.3vw] mb-[1.3vw] col-span-4 ml-[-6rem] p-4 bg-gray-800 rounded-lg border border-[#CCCCCC]">
+          <div className="col-span-4 p-4 ml-[-6.5vw] mt-[2vw] bg-gray-800 rounded-lg border border-[#CCCCCC]">
             <Resumen
               mes={"August"}
               progress1={50}
@@ -56,11 +56,11 @@ export default function Home() {
 
           
           {/* Caja de Gráfico */}
-          <div className="col-span-8 rounded-lg mr-[1.8vw] mt-[1.3vw]">
-            <div className=" relative">
+          <div className="col-span-8 rounded-lg mr-[1.8vw] mt-[2vw]">
+            <div className="">
                 <Chart/>
             </div>
-          </div>
+          </div>  
         </section>
       </main>
     </div>
