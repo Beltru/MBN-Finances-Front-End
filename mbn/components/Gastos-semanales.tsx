@@ -1,8 +1,8 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
-import { Bar, BarChart, CartesianGrid, LabelList, XAxis } from "recharts"
 import "./gastos.css"
+import { TrendingUp } from "lucide-react"
+import { Bar, BarChart, CartesianGrid, LabelList, XAxis, Cell } from "recharts"
 import { useEffect, useRef, useState } from 'react';
 
 import {
@@ -23,24 +23,25 @@ import {
 export const description = "A bar chart with a label"
 
 const chartData = [
-  { date: "Monday", desktop: 14312 },
-  { date: "Tuesday", desktop: 8342 },
-  { date: "Wednesday", desktop: 2550 },
-  { date: "Thursday", desktop: 10973 },
-  { date: "Friday", desktop: 19032 },
-  { date: "Saturday", desktop: 16130 },
-  { date: "Sunday", desktop: 9233 }
+  { date: "Monday", Money: 14312 },
+  { date: "Tuesday", Money: 8342 },
+  { date: "Wednesday", Money: 2550 },
+  { date: "Thursday", Money: 10973 },
+  { date: "Friday", Money: 19032 },
+  { date: "Saturday", Money: 16130 },
+  { date: "Sunday", Money: 9233 }
 ]
 
 const chartConfig = {
   desktop: {
-    label: "Desktop",
+    label: "Money",
     color: "hsl(var(--chart-1))",
   },
 } satisfies ChartConfig
 
 const Gastos = () => {
-
+// Encontrar el valor máximo de "desktop"
+ const maxValue = Math.max(...chartData.map(item => item.Money));
   return (
     <Card>
       <CardHeader>
@@ -66,12 +67,17 @@ const Gastos = () => {
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={8}>
+            <Bar dataKey="Money" radius={10}>
+            {chartData.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={entry.Money === maxValue ? "hsl(var(--chart-highlight))" : "var(--color-desktop)"}/>))}
+
               <LabelList
                 position="top"
                 offset={12}
                 className="fill-foreground"
-                fontSize={12}
+                fontSize={13}
               />
             </Bar>
           </BarChart>
@@ -83,6 +89,7 @@ const Gastos = () => {
         </div>
       </CardFooter>
     </Card>
+    
   )
 }
 

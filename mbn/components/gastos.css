@@ -28,6 +28,8 @@
       --chart-3: 240 1% 58%;
       --chart-4: 240 1% 42%;
       --chart-5: 240 2% 26%;
+      --chart-highlight: 0 60% 50%; /* New variable for highlight (Red by default) */
+
     }
   
     .dark {
