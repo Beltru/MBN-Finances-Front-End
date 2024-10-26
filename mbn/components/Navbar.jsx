@@ -11,7 +11,7 @@ const Navbar = () => {
             <ul className="flex flex-row justify-around w-[21vw] items-center">
               <li>Bienvenido Beltran Cid</li>
               <li><img src="/profile-photo.jpg" alt="" className="rounded-full"/></li>
-              <li><img src="settings.png" alt="" className="w-[1.5vw]"/></li>
+              <li><a href="http://localhost:3000/settings"><img src="settings.png" className="w-[1.5vw] hover:cursor-pointer"/></a></li>
             </ul>
         </div>
       </div>
