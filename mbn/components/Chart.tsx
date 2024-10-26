@@ -20,7 +20,7 @@ import {
 
 export const description = "An interactive line chart"
 
-const chartData = [
+const  chartData = [
   // Datos de tráfico mensual para 2024, corregidos
   { date: "2024-01-01", desktop: 91, mobile: 1800 },
   { date: "2024-02-01", desktop: 97, mobile: 180 },
@@ -39,7 +39,7 @@ const chartData = [
 
 const chartConfig = {
   views: {
-    label: "Page Views",
+    label: "Money",
   },
   desktop: {
     label: "Desktop",
@@ -67,7 +67,7 @@ const Chart = () => {
     <Card>
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-2">
-          <CardTitle>Yearly Expenses</CardTitle>
+          <CardTitle className="text-xl">Monthly Money</CardTitle>
         </div>
         <div className="flex">
           {["desktop", "mobile"].map((key) => {

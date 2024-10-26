@@ -33,7 +33,7 @@ export default function Home() {
 
 
           {/* Caja de Dinero en Cuenta */}
-          <div className="col-span-4 row-span-1 ml-[-25%] p-4 bg-gray-800 rounded-lg">          
+          <div className="col-span-4 row-span-1 ml-[-25%] p-4 bg-[#18181B] border border-[#CCCCCC] rounded-lg">          
           <DineroCuenta/>
           </div>
 
@@ -44,7 +44,7 @@ export default function Home() {
    
 
           {/* Caja de Resumen */}
-          <div className="col-span-4 p-4 ml-[-27%] mt-[2vw] bg-gray-800 rounded-lg border border-[#CCCCCC]">
+          <div className="col-span-4 p-4 ml-[-27%] mt-[2vw] bg-[#18181B] rounded-lg border border-[#CCCCCC]">
             <Resumen
               mes={"August"}
               progress1={50}

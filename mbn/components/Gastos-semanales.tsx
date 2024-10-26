@@ -43,9 +43,9 @@ const Gastos = () => {
 // Encontrar el valor máximo de "desktop"
  const maxValue = Math.max(...chartData.map(item => item.Money));
   return (
-    <Card>
+    <Card className="pb-14">
       <CardHeader>
-        <CardDescription>Weekly Expenses</CardDescription>
+        <CardDescription className="text-xl">Daily Money</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
@@ -83,11 +83,6 @@ const Gastos = () => {
           </BarChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col items-start my-2 text-sm">
-        <div className="leading-none text-muted-foreground">
-          Showing this week's expenses
-        </div>
-      </CardFooter>
     </Card>
     
   )

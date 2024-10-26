@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar-Abajo"
 export default function Landing() {
 
   return (   
-  <div className="h-[500vh] bg-gradient-to-r from-[#0f0015] via-[#292d47] to-[#0f0015] overflow-hidden">
+  <div className="h-[500vh] bg-gradient-to-r from-[#0e0511] via-[#292d47] to-[#0e0511] overflow-hidden">
     <header>
       <Navbar/>
     </header>
