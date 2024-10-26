@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 
+import DineroCuenta from "../../components/DC"
 import Resumen from "../../components/Resumen"
 import Gastos from "../../components/Gastos-semanales"
 import Navbar from "../../components/Navbar";
@@ -33,10 +34,7 @@ export default function Home() {
 
           {/* Caja de Dinero en Cuenta */}
           <div className="col-span-4 row-span-1 ml-[-25%] p-4 bg-gray-800 rounded-lg">          
-            <p className="text-lg">Dinero en cuenta:</p>
-            <p className="text-3xl font-bold">142,749 $</p><br></br>
-            <p className="text-lg">Dinero transferido:</p>
-            <p className="text-3xl font-bold">42,798 $</p>
+          <DineroCuenta/>
           </div>
 
           {/* Caja de Gastos */}
