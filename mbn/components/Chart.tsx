@@ -21,19 +21,19 @@ import {
 export const description = "An interactive line chart"
 
 const  chartData = [
-  // Datos de tráfico mensual para 2024, corregidos
-  { date: "2024-01-01", desktop: 91, mobile: 1800 },
-  { date: "2024-02-01", desktop: 97, mobile: 180 },
-  { date: "2024-03-01", desktop: 167, mobile: 120 },
-  { date: "2024-04-01", desktop: 242, mobile: 260 },
-  { date: "2024-05-01", desktop: 373, mobile: 290 },
-  { date: "2024-06-01", desktop: 301, mobile: 340 },
-  { date: "2024-07-01", desktop: 245, mobile: 180 },
-  { date: "2024-08-01", desktop: 409, mobile: 320 },
-  { date: "2024-09-01", desktop: 59, mobile: 110 },
-  { date: "2024-10-01", desktop: 261, mobile: 190 },
-  { date: "2024-11-01", desktop: 327, mobile: 350 },
-  { date: "2024-12-01", desktop: 292, mobile: 210 }, 
+  { date: "0", desktop: 0, mobile: 0 },
+  { date: "2024-02", desktop: 91, mobile: 180 },
+  { date: "2024-03", desktop: 97, mobile: 180 },
+  { date: "2024-04", desktop: 167, mobile: 120 },
+  { date: "2024-05", desktop: 242, mobile: 260 },
+  { date: "2024-06", desktop: 373, mobile: 290 },
+  { date: "2024-07", desktop: 301, mobile: 340 },
+  { date: "2024-08", desktop: 245, mobile: 180 },
+  { date: "2024-09", desktop: 409, mobile: 320 },
+  { date: "2024-10", desktop: 59, mobile: 110 },
+  { date: "2024-11", desktop: 261, mobile: 190 },
+  { date: "2024-12", desktop: 327, mobile: 350 },
+  { date: "2024-01", desktop: 327, mobile: 350 },
 ];
 
 
@@ -42,11 +42,11 @@ const chartConfig = {
     label: "Money",
   },
   desktop: {
-    label: "Desktop",
+    label: "Gastos",
     color: "hsl(var(--chart-1))",
   },
   mobile: {
-    label: "Mobile",
+    label: "Ingresos",
     color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig
@@ -93,7 +93,7 @@ const Chart = () => {
       <CardContent className="px-2 sm:p-6">
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-[15vh] w-full"
+          className="h-[15vh] w-full"
         >
           <LineChart
             accessibilityLayer
@@ -104,19 +104,21 @@ const Chart = () => {
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="date"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={4}
-              minTickGap={12}
+              tickMargin={12}
               tickFormatter={(value) => {
+                if (value === 0) {
+                  const date = ""
+                  return date
+                } else {
                 const date = new Date(value)
                 return date.toLocaleDateString("en-US", {month: "short",})
+                }
               }}
             />
             <ChartTooltip
               content={
                 <ChartTooltipContent
-                  className="w-[150px]"
+                  className="w-[100px]"
                   nameKey="views"
                   labelFormatter={(value) => {
                     return new Date(value).toLocaleDateString("en-US", { month: "short"})

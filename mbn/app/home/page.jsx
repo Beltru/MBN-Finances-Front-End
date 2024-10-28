@@ -15,23 +15,13 @@ export default function Home() {
       <nav>
         <Navbar/>
       </nav>
-      <main className="grid grid-cols-12 gap-[8vw] w-[95vw] h-[80vh]">
-        <aside className="col-span-3 space-y-4 flex justify-between flex-col bg-gray-800 rounded-lg p-4">
-          <div className="justify-between h-[50%]">
-            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Dinero en cuenta</button>
-            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Gastos</button>
-          </div>
+      <main className="flex justify-center items-end w-[100vw] h-[85vh]">
 
-          <div>
-            <button className="block text-left p-2 hover:bg-gray-600 rounded-lg mb-1 duration-500">Help</button>
-          </div>
-        </aside>
-
-        <section className="col-span-9 grid grid-cols-12 gap-x-[4vw] gap-y-[3vh] sm:gap-x-[2vw] sm:gap-y-[1.5vh]">
+        <section className="grid grid-cols-12 gap-x-[7vw] gap-y-[5vh] w-[70vw]">
 
 
           {/* Caja de Dinero en Cuenta */}
-          <div className="col-span-4 row-span-1 ml-[-25%] p-4 bg-[#18181B] border border-[#CCCCCC] rounded-lg">          
+          <div className="col-span-4 row-span-1 ml-[-25%] p-4 bg-neutral-900 border border-[#CCCCCC] rounded-lg">          
           <DineroCuenta/>
           </div>
 
@@ -42,7 +32,7 @@ export default function Home() {
    
 
           {/* Caja de Resumen */}
-          <div className="col-span-4 p-4 ml-[-27%] mt-[2vw] bg-[#18181B] rounded-lg border border-[#CCCCCC]">
+          <div className="col-span-4 p-4 ml-[-27%] mt-[2vw] bg-neutral-900 rounded-lg border border-[#CCCCCC]">
             <Resumen
               mes={"August"}
               progress1={50}
