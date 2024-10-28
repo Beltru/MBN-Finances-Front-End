@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+button {
+    background: #fff;
+    color: #000;
+    font-weight: 700;
+    padding: .6vw 1vw;
+    cursor: pointer;
+    border-radius: .1vw;
+    font-size: 1vw;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+}
