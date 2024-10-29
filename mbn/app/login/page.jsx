@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./login.css"
 
 export default function Login() {
+    
     return (
         <div className="bg-gradient-to-r from-[#080c2c] via-[#292d47] to-black overflow-hidden">
            <main className="">

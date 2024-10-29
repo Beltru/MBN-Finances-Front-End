@@ -21,7 +21,6 @@ export default function Landing() {
         </div>
       </section>
       <section className="w-[100vw] h-[20vw] bg-gradient-to-r from-neutral-950 via-[#1f0613] to-neutral-950 shadow-2xl mb-[10vw]">
-
       </section>
       <ScrollCards  />
       {/* <section className="grid grid-rows-3 grid-cols-2 h-[100vh] w-[100vw] pl-[6vw] py-[8vh] pb-[16vh] gap-[16vw]">
