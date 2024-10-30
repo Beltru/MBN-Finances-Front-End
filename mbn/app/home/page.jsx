@@ -21,7 +21,7 @@ export default function Home() {
 
 
           {/* Caja de Dinero en Cuenta */}
-          <div className="col-span-4 row-span-1 ml-[-25%] p-4 bg-neutral-900 border border-[#CCCCCC] rounded-lg">          
+          <div className="col-span-4 row-span-1 ml-[-25%] p-4 bg-neutral-900 border border-[#CCCCCC] rounded-full">          
           <DineroCuenta/>
           </div>
 

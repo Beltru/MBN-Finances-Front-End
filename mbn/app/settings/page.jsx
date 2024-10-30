@@ -25,11 +25,11 @@ export default function Settings() {
   return (
     <div className="pt-20 p-8 h-[100vh] bg-gradient-to-r from-black via-gray-900 to-black text-white overflow-hidden">
       <nav>
-        <Navbar />
+        <Navbar/>
       </nav>
             <main className="flex justify-center items-center w-[95vw] h-[80vh]">
               <div className="flex flex-col items-center max-w-md w-full space-y-6">
-               <div className="text-center">
+               <div className="text-center pt-32">
             <p className="text-4xl font-bold">Nombre de usuario</p>
                </div>
                
