@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 import DineroCuenta from "../../components/DC"
-import Resumen from "../../components/Resumen"
+import Resumen from "../../components/Mensual-chart"
 import Gastos from "../../components/Gastos-semanales"
 import Navbar from "../../components/Navbar";
 import Chart from "../../components/Chart";
@@ -21,8 +21,13 @@ export default function Home() {
 
 
           {/* Caja de Dinero en Cuenta */}
-          <div className="col-span-4 row-span-1 ml-[-25%] p-4 bg-neutral-900 border border-[#CCCCCC] rounded-full">          
-          <DineroCuenta/>
+          <div className="row-span-1 col-span-3 ml-[-25%] flex flex-col items-center justify-between">
+            <div className='flex items-center bg-neutral-900 border-[#3c6edb] border-[12px] rounded-full w-[55%] h-[43%]'>
+              <DineroCuenta name={"Dinero"} number={145706}/>
+            </div> 
+            <div className='flex items-center bg-neutral-900 border-[#cf318d] border-[12px] rounded-full w-[55%] h-[43%]'>
+              <DineroCuenta name={"Ingresos"} number={42000}/>
+            </div>    
           </div>
 
           {/* Caja de Gastos */}
@@ -32,7 +37,7 @@ export default function Home() {
    
 
           {/* Caja de Resumen */}
-          <div className="col-span-4 p-4 ml-[-27%] mt-[2vw] bg-neutral-900 rounded-lg border border-[#CCCCCC]">
+          <div className="col-span-4 mt-[2vw]">
             <Resumen
               mes={"August"}
               progress1={50}

@@ -67,7 +67,7 @@ const Chart = () => {
     <Card>
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-2">
-          <CardTitle className="text-xl">Monthly Money</CardTitle>
+          <CardTitle className="text-xl">Yearly Resumé</CardTitle>
         </div>
         <div className="flex">
           {["desktop", "mobile"].map((key) => {
