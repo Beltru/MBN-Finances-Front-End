@@ -14,7 +14,7 @@ export default function Landing() {
           <img src="/mbn.png" alt="" className="h-[4.3vw] w-[5.5vw] m-2" />
         </div>
         <div>
-          <p className="text-[6vw]">Money is Beyond Numbers</p>
+          <p className="text-[6vw]">Money Beyond Numbers</p>
         </div>
         <div>
           

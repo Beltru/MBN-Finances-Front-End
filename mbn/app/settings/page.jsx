@@ -87,7 +87,7 @@ const EditableProfile = () => {
           </div>
           <button
             onClick={handleEditClick}
-            className="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md font-semibold"
+            className="mt-4 w-full bg-[#2631cf] hover:bg-[#232981] transition-all duration-200 text-white py-2 px-4 rounded-md font-semibold"
           >
             {isEditing ? 'Guardar Cambios' : 'Editar Perfil'}
           </button>

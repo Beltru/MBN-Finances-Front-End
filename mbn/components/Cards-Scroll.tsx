@@ -14,12 +14,12 @@ const cardData = [
     subtext: "Fund your account by raising capital or transferring funds from an external account."
   },
   {
-    img: "/chatty-extension.png",
+    img: "/dinero.png",
     heading: "Invest",
     subtext: "Use the funds to invest in opportunities and watch your balance grow."
   },
   {
-    img: "/bills.png",
+    img: "/semanal.png",
     heading: "Control your earnings",
     subtext: "Your investments have paid off, and your account is thriving."
   },
@@ -77,7 +77,7 @@ const ScrollCard: React.FC = () => {
                 className="">
               
                 <div className="w-[40vw] h-[40vh] flex justify-center items-center">
-                  <img src={cardData[currentIndex].img} alt="" className='max-w-[50vw] max-h-[54vh] rounded-lg p-[1vw]' />
+                  <img src={cardData[currentIndex].img} alt="" className='max-w-[40vw] max-h-[54vh] rounded-lg p-[1vw]' />
                 </div>
               </motion.div>
             </AnimatePresence>
