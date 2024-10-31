@@ -21,8 +21,8 @@ import {
 export const description = "A bar chart with a custom label"
 
 const chartData = [
-  { month: "Ingresos", desktop: 186},
-  { month: "Gastos", desktop: 305},
+  { month: "Earnings", desktop: 186},
+  { month: "Expenses", desktop: 305},
 ]
 
 const chartConfig = {

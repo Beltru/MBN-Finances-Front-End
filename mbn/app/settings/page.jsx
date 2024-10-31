@@ -2,7 +2,7 @@
 
 import Navbar from "../../components/Nav-set";
 import { useState } from "react";
-import "./sett.css"
+import "./settings.css"
 
 
 export default function Settings() {
@@ -43,35 +43,22 @@ export default function Settings() {
                                     <input type="text" required />
                                     <label>Last name</label>
                                 </div>    
+                                
+                            </div>                             
+                                 
+                            <div className=" flex gap-4 mt-4">
                                 <div className="input-field mb-[1.5vw]">
                                     <input type="text" required />
                                     <label>Email</label>
                                 </div> 
-                            </div>                             
-                                 
-                            <div className=" flex gap-4 mt-4">
                                 <div className="input-field mb-[1.5vw]">
                                     <input
                                         type="password"
                                         required
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}/>
-                                    
                                     <label className="absolute">Password</label>
                                 </div>
-                                <div className="input-field mb-[1.5vw]">
-                                    <input
-                                        type="password"
-                                        required
-                                        value={confirmPassword}
-                                        onChange={(e) => setConfirmPassword(e.target.value)}/>
-                                    
-                                    <label>Confirm password</label>
-                                </div>
-                                {error && <p className="text-red-500 py-1 mb-2">{error}</p>}
-                            </div>
-                            <div className="flex items-center flex-col w-[100%]">
-                                <button type="submit" className="submit w-[50%]">Apply</button>
                             </div>
                         </form>
                     </div> 

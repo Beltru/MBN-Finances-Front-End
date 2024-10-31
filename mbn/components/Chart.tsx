@@ -42,11 +42,11 @@ const chartConfig = {
     label: "Money",
   },
   desktop: {
-    label: "Gastos",
+    label: "Expenses",
     color: "hsl(var(--chart-1))",
   },
   mobile: {
-    label: "Ingresos",
+    label: "Earnings",
     color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig

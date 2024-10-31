@@ -64,16 +64,16 @@ const Navbar = () => {
         </div>
         <div className="flex flex-row items-center">
           <ul className="flex flex-row">
-            <li className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem] font-medium">
+            <li className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem]">
               Team
             </li>
-            <li className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem] font-medium">
+            <li className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem]">
               Support
             </li>
-            <a href="http://localhost:3000/login" className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem] font-medium">
+            <a href="http://localhost:3000/login" className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem]">
               Login
             </a>
-            <a href="http://localhost:3000/register" className=" px-3 py-1 rounded-lg flex items-center justify-center bg-red-600 hover:hover:bg-red-700 duration-500 cursor-pointer mr-2 text-[0.95rem] font-bold">
+            <a href="http://localhost:3000/register" className=" px-3 py-1 rounded-lg flex items-center justify-center bg-red-600 hover:hover:bg-red-700 duration-500 cursor-pointer mr-2 text-[0.95rem]">
               Sign Up
             </a> 
           </ul>

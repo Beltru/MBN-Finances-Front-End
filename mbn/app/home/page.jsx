@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 
-import DineroCuenta from "../../components/DC"
+import DineroCuenta from "../../components/Dinero-Cuenta"
 import Resumen from "../../components/Mensual-chart"
 import Gastos from "../../components/Gastos-semanales"
 import Navbar from "../../components/Navbar";
