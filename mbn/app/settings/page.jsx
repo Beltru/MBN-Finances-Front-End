@@ -1,68 +1,100 @@
 "use client"
 
-import Navbar from "../../components/Nav-set";
-import { useState } from "react";
-import "./settings.css"
+import { useState } from 'react';
+import Navbar from '../../components/Nav-set'; // Asegúrate de que la ruta sea correcta
 
+const EditableProfile = () => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [formData, setFormData] = useState({
+    name: 'Juan',
+    lastName: 'Pérez',
+    email: 'juan.perez@example.com',
+    password: '******',
+  });
 
-export default function Settings() {
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [error, setError] = useState("");
+  const handleEditClick = () => {
+    setIsEditing(!isEditing);
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        if (password !== confirmPassword) {
-            setError("Las contraseñas no coinciden.");
-            return;
-        }
-
-        setError("");
-        console.log("Formulario enviado");
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   return (
     <div className="pt-20 p-8 h-[100vh] bg-gradient-to-r from-black via-gray-900 to-black text-white overflow-hidden">
       <nav>
-        <Navbar/>
+        <Navbar />
       </nav>
-            <main className="flex justify-center items-center w-[95vw] h-[80vh]">
-              <div className="flex flex-col items-center max-w-md w-full space-y-6">
-               <div className="text-center pt-32">
-            <p className="text-4xl font-bold">Nombre de usuario</p>
-               </div>
-               
-                        <form onSubmit={handleSubmit} className="w-[100%] flex h-[65vh] items-center">
-                            <div className=" flex gap-4 mt-4">
-                                <div className="input-field mb-[1.5vw]">
-                                    <input type="text" required />
-                                    <label>Name</label>
-                                </div> 
-                                <div className="input-field mb-[1.5vw]">
-                                    <input type="text" required />
-                                    <label>Last name</label>
-                                </div>    
-                                
-                            </div>                             
-                                 
-                            <div className=" flex gap-4 mt-4">
-                                <div className="input-field mb-[1.5vw]">
-                                    <input type="text" required />
-                                    <label>Email</label>
-                                </div> 
-                                <div className="input-field mb-[1.5vw]">
-                                    <input
-                                        type="password"
-                                        required
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}/>
-                                    <label className="absolute">Password</label>
-                                </div>
-                            </div>
-                        </form>
-                    </div> 
-            </main>
+      <div className="bg-gray-900 text-white p-8 rounded-lg max-w-md mx-auto mt-10">
+        <h2 className="text-2xl font-bold mb-6">Perfil de Usuario</h2>
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium">Nombre</label>
+            {isEditing ? (
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="mt-1 p-2 w-full bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-indigo-500"
+              />
+            ) : (
+              <p className="mt-1">{formData.name}</p>
+            )}
+          </div>
+          <div>
+            <label className="block text-sm font-medium">Apellido</label>
+            {isEditing ? (
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                className="mt-1 p-2 w-full bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-indigo-500"
+              />
+            ) : (
+              <p className="mt-1">{formData.lastName}</p>
+            )}
+          </div>
+          <div>
+            <label className="block text-sm font-medium">Correo Electrónico</label>
+            {isEditing ? (
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 p-2 w-full bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-indigo-500"
+              />
+            ) : (
+              <p className="mt-1">{formData.email}</p>
+            )}
+          </div>
+          <div>
+            <label className="block text-sm font-medium">Contraseña</label>
+            {isEditing ? (
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className="mt-1 p-2 w-full bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-indigo-500"
+              />
+            ) : (
+              <p className="mt-1">{'*'.repeat(formData.password.length)}</p>
+            )}
+          </div>
+          <button
+            onClick={handleEditClick}
+            className="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md font-semibold"
+          >
+            {isEditing ? 'Guardar Cambios' : 'Editar Perfil'}
+          </button>
         </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default EditableProfile;
