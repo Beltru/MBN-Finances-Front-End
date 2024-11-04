@@ -1,8 +1,8 @@
 import ScrollCards from "../components/Cards-Scroll";
 import Navbar from "../components/Navbar-Abajo"
+import Card from "../components/Carrousel"
 
 export default function Landing() {
-
   return (   
   <div className="h-[500vh] bg-gradient-to-r from-[#0e0511] via-[#292d47] to-[#0e0511] overflow-hidden">
     <header>
@@ -20,7 +20,8 @@ export default function Landing() {
           
         </div>
       </section>
-      <section className="w-[100vw] h-[20vw] bg-gradient-to-r from-neutral-950 via-[#1f0613] to-neutral-950 shadow-2xl mb-[10vw]">
+      <section className="w-[100vw] h-[20vw] my-[10vw] flex items-start">
+        <Card/>
       </section>
       <ScrollCards  />
       {/* <section className="grid grid-rows-3 grid-cols-2 h-[100vh] w-[100vw] pl-[6vw] py-[8vh] pb-[16vh] gap-[16vw]">

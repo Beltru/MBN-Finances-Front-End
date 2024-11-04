@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-        "@/*": ["./src/lib/*"]
+      "@/*": [
+        "./src/lib/*"
+      ]
     },
     "lib": [
       "dom",
@@ -24,14 +26,17 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "components/Cards-Scroll.tsx"  ],
+    "**/*.tsx",
+    "components/Cards-Scroll.tsx",
+    "components/Carrousel.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]
