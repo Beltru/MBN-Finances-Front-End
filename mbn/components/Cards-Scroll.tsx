@@ -71,13 +71,13 @@ const ScrollCard: React.FC = () => {
               <motion.div
                 key={currentIndex}
                 initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}  
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.3 }}
                 className="">
               
                 <div className="w-[40vw] h-[40vh] flex justify-center items-center">
-                  <img src={cardData[currentIndex].img} alt="" className='max-w-[40vw] max-h-[54vh] rounded-lg p-[1vw]' />
+                  <img src={cardData[currentIndex].img} alt="" className={` rounded-lg p-[1vw] ${currentIndex === 1 ? "w-[25vw]" : currentIndex === 2 ? "w-[40vw]" : currentIndex === 0 ? "w-[35vw]" : "w-[35vw]"}`}  />
                 </div>
               </motion.div>
             </AnimatePresence>
