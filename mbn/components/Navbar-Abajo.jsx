@@ -31,6 +31,7 @@ const Navbar = () => {
           <div>
             <Image
               src={"/mbn.png"}
+              alt=""
               width={55}
               height={55}
             />
@@ -42,6 +43,7 @@ const Navbar = () => {
             <li className={`p-2 rounded-lg flex items-center justify-center hover:bg-[#303030] transition-all duration-500 cursor-pointer mx-1 ${activeCard === 1 ? "bg-[#303030]" : ""}`}>
               <Image 
                 src={"/bank.svg"}
+                alt=""
                 width={18}
                 height={18}
               />
@@ -49,6 +51,7 @@ const Navbar = () => {
             <li className={`p-2 rounded-lg flex items-center justify-center hover:bg-[#303030] transition-all duration-500 cursor-pointer mx-1 ${activeCard === 2 ? "bg-[#303030]" : ""}`}>
               <Image 
                 src={"/graph-up.svg"}
+                alt=""
                 width={18}
                 height={18}
               />
@@ -56,6 +59,7 @@ const Navbar = () => {
             <li className={`p-2 rounded-lg flex items-center justify-center hover:bg-[#303030] transition-all duration-500 cursor-pointer mx-1 ${activeCard === 3 ? "bg-[#303030]" : ""}`}>
               <Image 
                 src={"/wallet2.svg"}
+                alt=""
                 width={18}
                 height={18}
               />
