@@ -4,7 +4,6 @@ import { AnimatePresence, motion, useMotionValue, animate } from "framer-motion"
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
-import Navbar from "../components/Navbar-Abajo";
 
 export default function Landing() {
   const images = [
@@ -26,7 +25,6 @@ export default function Landing() {
   const [mustFinish, setMustFinish] = useState(false);
   const [rerender, setRerender] = useState(false);
 
-  // Carousel animation effect
   useEffect(() => {
     let controls;
     const finalPosition = -width / 2 - 8;

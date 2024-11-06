@@ -11,13 +11,13 @@ import Chart from "../../components/Chart";
 export default function Home() {
  
   return (
-    <div className="pt-20 p-8 h-[100vh] bg-gradient-to-r from-black via-gray-900 to-black text-white overflow-hidden">
+    <div className="pt-20 p-8 h-[100vh] w-screen bg-gradient-to-r from-black via-gray-900 to-black text-white  flex justify-center items-center">
       <nav>
         <Navbar/>
       </nav>
-      <main className="flex justify-center items-end w-[100vw] h-[87vh]">
+      <main className="flex justify-center items-center w-[100vw] h-[87vh]">
 
-        <section className="grid grid-cols-12 gap-x-[7vw] gap-y-[5vh] w-[70vw]">
+        <section className="grid grid-cols-12 gap-x-[7vw] gap-y-[5vh] w-[75vw]">
 
 
           {/* Caja de Dinero en Cuenta */}
@@ -34,7 +34,7 @@ export default function Home() {
    
 
           {/* Caja de Resumen */}
-          <div className="col-span-4 mt-[1vw]">
+          <div className="col-span-4">
             <Resumen
               mes={"August"}
               progress1={50}
@@ -44,7 +44,7 @@ export default function Home() {
 
           
           {/* Caja de Gráfico */}
-          <div className="col-span-8 rounded-lg mr-[1.8vw] mt-[1vw]">
+          <div className="col-span-8 rounded-lg mr-[1.8vw]">
             <div className="">
                 <Chart/>
             </div>
