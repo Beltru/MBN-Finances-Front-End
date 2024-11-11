@@ -1,7 +1,6 @@
 import ScrollCards from "../components/Cards-Scroll";
 import Navbar from "../components/Navbar-Abajo"
 import Card from "../components/Carrousel"
-
 export default function Landing() {
   return (   
   <div className="h-[500vh] bg-gradient-to-r from-[#0e0511] via-[#292d47] to-[#0e0511] overflow-hidden">
@@ -24,13 +23,12 @@ export default function Landing() {
         <Card/>
       </section>
       <ScrollCards  />
-      {/* <section className="grid grid-rows-3 grid-cols-2 h-[100vh] w-[100vw] pl-[6vw] py-[8vh] pb-[16vh] gap-[16vw]">
-        <aside className="row-span-3 col-span-1 bg-black rounded-2xl flex items-center justify-center">
-          <video src="/graph.mp4" className="w-[50vw] h-[50vh]" autoPlay loop></video>
-        </aside>
-      </section> */}
-
-      
+  
+      <footer className="grid grid-cols-3 h-[70vh] gap-x-[5vw] gap-y-[3vh]">
+        <div className="flex col-start-1 ml-4 border border-gray-600 rounded-md p-10">
+              hola como andas
+        </div>          
+      </footer>
     </main>
   </div>
   );
