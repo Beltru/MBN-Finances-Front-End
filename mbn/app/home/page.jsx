@@ -9,7 +9,6 @@ import Chart from "../../components/Chart";
 
 
 export default function Home() {
- 
   return (
     <div className="pt-20 p-8 h-[100vh] w-screen bg-gradient-to-r from-black via-gray-900 to-black text-white  flex justify-center items-center">
       <nav>
