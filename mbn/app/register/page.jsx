@@ -5,20 +5,43 @@ import Image from "next/image";
 import "./register.css";
 
 export default function Register() {
+    const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    
+    const handleSubmit = async (e)  => {
+        e.preventDefault(); 
+        
+        const registerData = {
+            email,
+            name,
+            password,
+          };
 
-        if (password !== confirmPassword) {
-            setError("Las contraseñas no coinciden.");
-            return;
-        }
+    try {
+      const response = await fetch("http://localhost:9000/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData), 
+      });
 
-        setError("");
-        console.log("Formulario enviado");
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Login exitoso:", data);
+      } else {
+        const error = await response.json();
+        console.error("Error de login:", error);
+        alert("Credenciales incorrectas o error en el servidor.");
+      }
+    } catch (err) {
+      console.error("Error en la solicitud:", err);
+      alert("Hubo un error al conectar con el servidor.");
+    }
     };
 
     return (
@@ -34,11 +57,11 @@ export default function Register() {
                             <h2>Create an Account</h2>
                             <div>
                                 <div className="input-field mb-[1.5vw]">
-                                    <input type="text" required />
+                                    <input type="text" required value={name} onChange={(e) =>setName(e.target.value)} />
                                     <label>Name</label>
                                 </div>
                                 <div className="input-field mb-[1.5vw]">
-                                    <input type="text" required />
+                                    <input type="text" required value={email} onChange={(e) => setEmail(e.target.value)} />
                                     <label>Email</label>
                                 </div>
                                 <div className="input-field mb-[1.5vw]">

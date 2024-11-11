@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import DineroCuenta from "../../components/Dinero-Cuenta"
 import Resumen from "../../components/Mensual-chart"
