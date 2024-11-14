@@ -1,8 +1,8 @@
 "use client"
-
 import { useState } from "react";
 import Image from "next/image";
 import "./register.css";
+import Link from "next/link"
 
 export default function Register() {
     const [email, setEmail] = useState("");
@@ -88,7 +88,7 @@ export default function Register() {
                                 <button type="submit" className="submit w-[80%]">Register</button>
                                 <div className="register">
                                     <p className="text-[#ccc]">Already have an account?</p>
-                                    <p><a href="http://localhost:3000/login" className="text-[#ccc] hover:text-[#fff] transition-all duration-300">Log in</a></p>
+                                    <Link href="/login"><p className="text-[#ccc] hover:text-[#fff] transition-all duration-300"> Log in</p></Link>
                                 </div>
                             </div>
                         </form> 

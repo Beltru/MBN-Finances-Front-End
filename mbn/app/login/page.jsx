@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import "./login.css";
+import Link from "next/link"
 
 export default function Login() {
 
@@ -85,7 +86,7 @@ export default function Login() {
                     />
                     <p>Remember me</p>
                   </label>
-                  <a href="http://localhost:3000/forgot">Forgot password?</a>
+                  <Link href="/forgot">Forgot password?</Link>
                 </div>
               </div>
               <div className="flex justify-center items-center flex-col w-[100%]">
@@ -94,14 +95,9 @@ export default function Login() {
                 </button>
                 <div className="register">
                   <p>Don't have an account?</p>
-                  <p>
-                    <a
-                      href="http://localhost:3000/register"
-                      className="hover:text-[#ffffff] transition-all duration-300"
-                    >
-                      Register
-                    </a>
-                  </p>
+                 <Link href="/register">
+                    <p className="hover:text-[#ffffff] transition-all duration-300"> Register </p>
+                 </Link>  
                 </div>
               </div>
             </form>

@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import Image from "next/image";
 import React from 'react';
 import { useState, useEffect } from 'react';
@@ -74,12 +75,12 @@ const Navbar = () => {
             <li className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem]">
               Support
             </li>
-            <a href="http://localhost:3000/login" className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem]">
+            <Link href="/login" className="px-2 py-1 rounded-lg flex items-center justify-center hover:hover:bg-[#303030] duration-500 cursor-pointer mr-4 text-[0.95rem]">
               Login
-            </a>
-            <a href="http://localhost:3000/register" className=" px-3 py-1 rounded-lg flex items-center justify-center bg-red-600 hover:hover:bg-red-700 duration-500 cursor-pointer mr-2 text-[0.95rem]">
+            </Link>
+            <Link href="/register" className=" px-3 py-1 rounded-lg flex items-center justify-center bg-red-600 hover:hover:bg-red-700 duration-500 cursor-pointer mr-2 text-[0.95rem]">
               Sign Up
-            </a> 
+            </Link> 
           </ul>
         </div>
       </nav>

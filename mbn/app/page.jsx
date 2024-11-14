@@ -1,8 +1,7 @@
-"use client"
-
 import ScrollCards from "../components/Cards-Scroll";
 import Navbar from "../components/Navbar-Abajo"
 import Card from "../components/Carrousel"
+import Link from "next/link"
 
 export default function Landing() {
   
@@ -43,7 +42,7 @@ export default function Landing() {
          </div>
 
          <div className="flex items-center justify-around mt-20 border border-gray-600 hover:border-gray-400 duration-300 h-[30%]">
-           <p className="text-3xl">Start here</p> <button className="px-6 py-4 border border-neutral-900 bg-neutral-800 rounded-full text-xl ">Create your account ➞</button>
+           <p className="text-3xl">Start here</p> <Link href="./register"><button className="px-6 py-4 border border-neutral-900 bg-neutral-800 rounded-full text-xl hover:bg-neutral-700 transition-all duration-300">Create your account ➞</button></Link>
          </div>
         </div>    
 
