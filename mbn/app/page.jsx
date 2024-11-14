@@ -27,7 +27,6 @@ export default function Landing() {
       </section>
       <ScrollCards  />
   
-  
       <footer className="flex flex-row items-center justify-center w-full bg-neutral-900 h-[100vh] px-[4%] py-[10%]">
 
         <div className="m-4 w-[45%] h-[70vh] rounded-md p-10">
@@ -47,7 +46,9 @@ export default function Landing() {
         </div>    
 
         <div className="m-4 border border-gray-600 w-[55%] h-[70vh] rounded-md p-10">
-
+          <div>
+            
+          </div>
         </div>
       </footer>
     </main>
