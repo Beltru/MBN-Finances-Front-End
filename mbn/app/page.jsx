@@ -3,14 +3,11 @@
 import ScrollCards from "../components/Cards-Scroll";
 import Navbar from "../components/Navbar-Abajo"
 import Card from "../components/Carrousel"
-import confetti from 'canvas-confetti';
 
 export default function Landing() {
-  const handleConfetti = () => {
-    confetti();
-  };
+  
   return (   
-  <div className="h-[500vh] bg-gradient-to-r from-[#0e0511] via-[#292d47] to-[#0e0511] overflow-hidden">
+  <div className="h-[533vh] bg-gradient-to-r from-[#0e0511] via-[#292d47] to-[#0e0511] overflow-hidden">
     <header>
       <Navbar/>
     </header>
@@ -20,7 +17,7 @@ export default function Landing() {
           <img src="/mbn.png" alt="" className="h-[4.3vw] w-[5.5vw] m-2" />
         </div>
         <div>
-          <p className="text-[6vw] cursor-pointer select-none" onClick={handleConfetti}>Money Beyond Numbers</p>
+          <p className="text-[6vw] select-none">Money Beyond Numbers</p>
         </div>
         <div>
           
@@ -31,10 +28,28 @@ export default function Landing() {
       </section>
       <ScrollCards  />
   
-      <footer className="grid grid-cols-3 h-[70vh] gap-x-[5vw] gap-y-[3vh] w-full">
-        <div className="flex col-start-1 ml-4 border border-gray-600 rounded-md p-10">
-              hola como andas
-        </div>          
+  
+      <footer className="flex flex-row items-center justify-center w-full bg-neutral-900 h-[100vh] px-[4%] py-[10%]">
+
+        <div className="m-4 w-[45%] h-[70vh] rounded-md p-10">
+          <div className="text-[4.3vw] text-[#c2c1c1]">
+            The only   
+         </div>   
+         <div className="text-[4.3vw] text-[#c2c1c1] leading-[0.5] flex flex-row items-center justify-center">
+          Way <p className="font-[100] text-[1.5rem] mx-4 text-neutral-500">――――――――</p> To bank 
+         </div>
+         <div className="text-[4.3vw] ml-24 text-[#c2c1c1]">
+          Your bitcoin
+         </div>
+
+         <div className="flex items-center justify-around mt-20 border border-gray-600 hover:border-gray-400 duration-300 h-[30%]">
+           <p className="text-3xl">Start here</p> <button className="px-6 py-4 border border-neutral-900 bg-neutral-800 rounded-full text-xl ">Create your account ➞</button>
+         </div>
+        </div>    
+
+        <div className="m-4 border border-gray-600 w-[55%] h-[70vh] rounded-md p-10">
+
+        </div>
       </footer>
     </main>
   </div>
