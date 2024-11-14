@@ -46,9 +46,7 @@ export default function Landing() {
         </div>    
 
         <div className="m-4 border border-gray-600 w-[55%] h-[70vh] rounded-md p-10">
-          <div>
-            
-          </div>
+    
         </div>
       </footer>
     </main>
