@@ -1,40 +1,23 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { CartesianGrid, Line, LineChart, XAxis } from "recharts"
-import "./chart.css"
+import React, { useEffect, useState } from "react";
+import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
+import "./chart.css";
 
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "./ui/card"
+} from "./ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "./ui/chart"
+} from "./ui/chart";
 
-export const description = "An interactive line chart"
-
-const  chartData = [
-  { date: "0", desktop: 0, mobile: 0 },
-  { date: "2024-02", desktop: 91, mobile: 180 },
-  { date: "2024-03", desktop: 97, mobile: 180 },
-  { date: "2024-04", desktop: 167, mobile: 120 },
-  { date: "2024-05", desktop: 242, mobile: 260 },
-  { date: "2024-06", desktop: 373, mobile: 290 },
-  { date: "2024-07", desktop: 301, mobile: 340 },
-  { date: "2024-08", desktop: 245, mobile: 180 },
-  { date: "2024-09", desktop: 409, mobile: 320 },
-  { date: "2024-10", desktop: 59, mobile: 110 },
-  { date: "2024-11", desktop: 261, mobile: 190 },
-  { date: "2024-12", desktop: 327, mobile: 350 },
-  { date: "2024-01", desktop: 327, mobile: 350 },
-];
-
+export const description = "An interactive line chart";
 
 const chartConfig = {
   views: {
@@ -48,19 +31,59 @@ const chartConfig = {
     label: "Earnings",
     color: "hsl(var(--chart-2))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 const Chart = () => {
-  const [activeChart, setActiveChart] =
-    React.useState<keyof typeof chartConfig>("desktop")
+  const [chartData, setChartData] = useState([]);
+  const [activeChart, setActiveChart] = useState<keyof typeof chartConfig>("desktop");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const total = React.useMemo(
-    () => ({
+  const fetchData = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const token = localStorage.getItem("token"); // Asegúrate de que el token esté presente
+      const userId = localStorage.getItem("userId"); // Asumiendo que el `userId` está almacenado
+
+      const response = await fetch(`http://localhost:9000/movements/chart/${userId}`, {
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al cargar los datos del gráfico.");
+      }
+
+      const data = await response.json();
+      setChartData(data); // Data recibida desde el backend
+    } catch (err) {
+      setError(err.message || "Error desconocido.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const total = React.useMemo(() => {
+    return {
       desktop: chartData.reduce((acc, curr) => acc + curr.desktop, 0),
       mobile: chartData.reduce((acc, curr) => acc + curr.mobile, 0),
-    }),
-    []
-  )
+    };
+  }, [chartData]);
+
+  if (loading) {
+    return <p>Cargando datos...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   return (
     <Card>
@@ -82,7 +105,7 @@ const Chart = () => {
                   {chartConfig[chart].label}
                 </span>
                 <span className="text-lg font-bold leading-none sm:text-xl">
-                  {new Intl.NumberFormat('es-ES').format(total[key as keyof typeof total])}
+                  {new Intl.NumberFormat("es-ES").format(total[chart])}
                 </span>
               </button>
             );
@@ -97,21 +120,16 @@ const Chart = () => {
           <LineChart
             accessibilityLayer
             data={chartData}
-            margin={{
-            }}
+            margin={{}}
           >
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="date"
               tickMargin={12}
               tickFormatter={(value) => {
-                if (value === 0) {
-                  const date = ""
-                  return date
-                } else {
-                const date = new Date(value)
-                return date.toLocaleDateString("en-US", {month: "short",})
-                }
+                if (!value) return "";
+                const date = new Date(value);
+                return date.toLocaleDateString("en-US", { month: "short" });
               }}
             />
             <ChartTooltip
@@ -120,7 +138,7 @@ const Chart = () => {
                   className="w-[100px]"
                   nameKey="views"
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", { month: "short"})
+                    return new Date(value).toLocaleDateString("en-US", { month: "short" });
                   }}
                 />
               }
@@ -136,7 +154,7 @@ const Chart = () => {
         </ChartContainer>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
 export default Chart;

@@ -8,7 +8,7 @@ export const metadata = {
 export default function ({ children }) {
   return (  
     <html lang="en">
-      <body className="text-[#cccccc] overflow-x-hidden" >
+      <body className="text-[#cccccc] overflow-x-hidden flex items-center justify-center" >
         {children}
       </body>
     </html>

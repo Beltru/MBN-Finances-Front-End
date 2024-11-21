@@ -22,7 +22,7 @@ const EditableProfile = () => {
   };
 
   return (
-    <div className="pt-20 p-8 h-[100vh] bg-gradient-to-r from-black via-gray-900 to-black text-white overflow-hidden">
+    <div className="pt-20 p-8 h-[100vh] w-[100vw] bg-gradient-to-r from-black via-gray-900 to-black text-white overflow-hidden">
       <nav>
         <Navbar />
       </nav>
