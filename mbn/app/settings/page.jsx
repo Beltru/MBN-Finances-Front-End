@@ -6,9 +6,9 @@ import Navbar from '../../components/Nav-set'; // Asegúrate de que la ruta sea 
 const EditableProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
-    name: 'Juan',
-    lastName: 'Pérez',
-    email: 'juan.perez@example.com',
+    name: 'Beltran',
+    lastName: 'Cid',
+    email: 'beltran.cid@gmail.com',
     password: '******',
   });
 

@@ -7,6 +7,7 @@ import Link from "next/link"
 export default function Register() {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
@@ -61,6 +62,10 @@ export default function Register() {
                                     <label>Name</label>
                                 </div>
                                 <div className="input-field mb-[1.5vw]">
+                                    <input type="text" required value={surname} onChange={(e) =>setSurname(e.target.value)} />
+                                    <label>Surname</label>
+                                </div>
+                                <div className="input-field mb-[1.5vw]">
                                     <input type="text" required value={email} onChange={(e) => setEmail(e.target.value)} />
                                     <label>Email</label>
                                 </div>
@@ -85,7 +90,7 @@ export default function Register() {
                                 {error && <p className="text-red-500 py-1 mb-2">{error}</p>}
                             </div>
                             <div className="flex justify-center items-center flex-col w-[100%]">
-                                <button type="submit" className="submit w-[80%]">Register</button>
+                            <Link href="/home"><p className="submit w-[100%]"> Register </p></Link>  
                                 <div className="register">
                                     <p className="text-[#ccc]">Already have an account?</p>
                                     <Link href="/login"><p className="text-[#ccc] hover:text-[#fff] transition-all duration-300"> Log in</p></Link>

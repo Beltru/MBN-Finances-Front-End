@@ -90,9 +90,7 @@ export default function Login() {
                 </div>
               </div>
               <div className="flex justify-center items-center flex-col w-[100%]">
-                <button type="submit" className="w-[80%]">
-                  Log In
-                </button>
+              <Link href="/home"><p className="submit w-[100%]"> Log in </p></Link>  
                 <div className="register">
                   <p>Don't have an account?</p>
                  <Link href="/register">
