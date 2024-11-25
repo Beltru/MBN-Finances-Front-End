@@ -12,7 +12,6 @@ const Navbar = () => {
         <div className="flex space-x-4">
             <ul className="flex flex-row justify-evenly w-[21vw] items-center">
               <li>Beltran Cid</li>
-              <li><img src="/profile-photo.jpg" alt="" className="rounded-full"/></li>
             </ul>
         </div>
       </div>
