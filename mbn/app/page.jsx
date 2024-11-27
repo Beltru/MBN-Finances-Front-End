@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useRef } from "react";
 import ScrollCards from "../components/Cards-Scroll";
 import Navbar from "../components/Navbar-Abajo"
 import Card from "../components/Carrousel"
