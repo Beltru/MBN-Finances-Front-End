@@ -4,7 +4,24 @@ import Card from "../components/Carrousel"
 import Link from "next/link"
 
 export default function Landing() {
+    const [isFooterVisible, setFooterVisible] = useState(false);
+    const footerRef = useRef(null);
   
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setFooterVisible(entry.isIntersecting);
+        },
+        { threshold: 0.1 }
+      );
+  
+      if (footerRef.current) observer.observe(footerRef.current);
+  
+      return () => {
+        if (footerRef.current) observer.unobserve(footerRef.current);
+      };
+    }, []);
+
   return (   
       <div className="h-[532vh] bg-gradient-to-r from-[#0e0511] via-[#292d47] to-[#0e0511] overflow-hidden">
         <header>
@@ -54,4 +71,3 @@ export default function Landing() {
       </div>
     );
   }
-  
