@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-
+import Link from "next/link";
 import DineroCuenta from "../../components/Dinero-Cuenta";
 import Resumen from "../../components/Mensual-chart";
 import Gastos from "../../components/Gastos-semanales";

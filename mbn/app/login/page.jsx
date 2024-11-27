@@ -4,12 +4,14 @@ import Image from "next/image";
 import { useState } from "react";
 import "./login.css";
 import Link from "next/link"
+import { useRouter } from "next/navigation";
 
 export default function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false); 
+  const router = useRouter();
 
   const handleLogIn = async (e) => {
     e.preventDefault(); 
@@ -33,6 +35,7 @@ export default function Login() {
       if (response.ok) {
         const data = await response.json();
         console.log("Login exitoso:", data);
+        router.push("/home")
       } else {
         const error = await response.json();
         console.error("Error de login:", error);

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import "./register.css";
 import Link from "next/link"
+import { useRouter } from "next/navigation";
 
 export default function Register() {
     const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
+    const router = useRouter();
 
     
     const handleSubmit = async (e)  => {
@@ -17,9 +19,10 @@ export default function Register() {
         
         const registerData = {
             email,
-            name,
+            nombre: name, // Cambia 'name' por 'nombre' para que coincida con el backend
             password,
-          };
+        };
+        
 
     try {
       const response = await fetch("http://localhost:9000/auth/register", {
@@ -27,15 +30,16 @@ export default function Register() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(loginData), 
+        body: JSON.stringify(registerData), 
       });
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Login exitoso:", data);
+        console.log("Registro exitoso:", data);
+        router.push("/home")
       } else {
         const error = await response.json();
-        console.error("Error de login:", error);
+        console.error("Error de registro:", error);
         alert("Credenciales incorrectas o error en el servidor.");
       }
     } catch (err) {
