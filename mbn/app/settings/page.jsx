@@ -1,16 +1,53 @@
-"use client"
+"use client";
 
-import { useState } from 'react';
-import Navbar from '../../components/Nav-set'; // Asegúrate de que la ruta sea correcta
+import { useEffect, useState } from "react";
+import Navbar from "../../components/Nav-set"; // Asegúrate de que la ruta sea correcta
+import { useRouter } from "next/navigation";
 
 const EditableProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
-    name: 'Juan',
-    lastName: 'Pérez',
-    email: 'juan.perez@example.com',
-    password: '******',
+    name: "",
+    lastName: "",
+    email: "",
+    password: "",
   });
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+  useEffect(() => {
+    // Llamada al backend para obtener datos del usuario
+    const fetchUserData = async () => {
+      const email = localStorage.getItem("email"); // Obtenemos el email desde localStorage
+      if (!email) {
+        console.error("No se encontró un email en el localStorage");
+        return;
+      }
+
+      try {
+        const response = await fetch(`http://localhost:9000/auth/user/email/${email}`, {
+          method: "GET",
+        });
+
+        if (response.ok) {
+          const userData = await response.json();
+          setFormData({
+            name: userData.nombre,
+            lastName: userData.apellido,
+            email: userData.email,
+            password: "", // La contraseña no se debe mostrar
+          });
+        } else {
+          const errorData = await response.json();
+          console.error("Error al obtener datos del usuario:", errorData.message);
+        }
+      } catch (err) {
+        console.error("Error en la solicitud:", err);
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const handleEditClick = () => {
     setIsEditing(!isEditing);
@@ -71,25 +108,11 @@ const EditableProfile = () => {
               <p className="mt-1">{formData.email}</p>
             )}
           </div>
-          <div>
-            <label className="block text-sm font-medium">Contraseña</label>
-            {isEditing ? (
-              <input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                className="mt-1 p-2 w-full bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-indigo-500"
-              />
-            ) : (
-              <p className="mt-1">{'*'.repeat(formData.password.length)}</p>
-            )}
-          </div>
           <button
             onClick={handleEditClick}
             className="mt-4 w-full bg-[#2631cf] hover:bg-[#232981] transition-all duration-200 text-white py-2 px-4 rounded-md font-semibold"
           >
-            {isEditing ? 'Guardar Cambios' : 'Editar Perfil'}
+            {isEditing ? "Guardar Cambios" : "Editar Perfil"}
           </button>
         </div>
       </div>

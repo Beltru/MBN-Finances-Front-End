@@ -35,6 +35,7 @@ export default function Login() {
       if (response.ok) {
         const data = await response.json();
         console.log("Login exitoso:", data);
+        localStorage.setItem("email", email);
         router.push("/home")
       } else {
         const error = await response.json();
