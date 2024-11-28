@@ -7,15 +7,14 @@ import Link from "next/link"
 import { useRouter } from "next/navigation";
 
 export default function Login() {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false); 
+  const [errorMessage, setErrorMessage] = useState(""); // Estado para manejar errores
   const router = useRouter();
 
   const handleLogIn = async (e) => {
     e.preventDefault(); 
-
 
     const loginData = {
       email,
@@ -36,15 +35,16 @@ export default function Login() {
         const data = await response.json();
         console.log("Login exitoso:", data);
         localStorage.setItem("email", email);
-        router.push("/home")
+        setErrorMessage(""); // Limpiar el mensaje de error
+        router.push("/home");
       } else {
         const error = await response.json();
         console.error("Error de login:", error);
-        alert("Credenciales incorrectas o error en el servidor.");
+        setErrorMessage("Usuario o contraseña incorrectos."); // Mostrar mensaje de error
       }
     } catch (err) {
       console.error("Error en la solicitud:", err);
-      alert("Hubo un error al conectar con el servidor.");
+      setErrorMessage("Hubo un error al conectar con el servidor."); // Error general
     }
   };
 
@@ -59,8 +59,11 @@ export default function Login() {
           </div>
 
           <div className="flex justify-center items-center rounded-xl w-[40vw] h-[100vh] bg-black hover:w-[85vw] transition-all duration-500 rounded-l-lg">
-            <form onSubmit={handleLogIn} className="w-[50%] flex h-[50vh] justify-around">
+            <form onSubmit={handleLogIn} className="w-[50%] flex h-[50vh] justify-around flex-col">
               <h2>Login</h2>
+              {errorMessage && ( // Mostrar mensaje de error si existe
+                <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
+              )}
               <div>
                 <div className="input-field mb-[1.5vw]">
                   <input

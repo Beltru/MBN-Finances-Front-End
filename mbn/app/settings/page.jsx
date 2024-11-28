@@ -13,12 +13,12 @@ const EditableProfile = () => {
     password: "",
   });
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(""); // Mensaje de éxito
   const router = useRouter();
 
   useEffect(() => {
-    // Llamada al backend para obtener datos del usuario
     const fetchUserData = async () => {
-      const email = localStorage.getItem("email"); // Obtenemos el email desde localStorage
+      const email = localStorage.getItem("email");
       if (!email) {
         console.error("No se encontró un email en el localStorage");
         return;
@@ -49,9 +49,43 @@ const EditableProfile = () => {
     fetchUserData();
   }, []);
 
-  const handleEditClick = () => {
-    setIsEditing(!isEditing);
+  const handleEditClick = async () => {
+    if (isEditing) {
+      const email = localStorage.getItem("email");
+      try {
+        console.log("Enviando datos al backend:", {
+          email,
+          nombre: formData.name,
+          apellido: formData.lastName,
+        });
+  
+        const response = await fetch(`http://localhost:9000/auth/user/email/${email}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nombre: formData.name,
+            apellido: formData.lastName,
+          }),
+        });
+  
+        if (response.ok) {
+          setSuccess("Cambios guardados con éxito.");
+          setIsEditing(false);
+        } else {
+          const errorData = await response.json();
+          setError(`Error al guardar cambios: ${errorData.message}`);
+        }
+      } catch (err) {
+        console.error("Error en la solicitud:", err);
+        setError("Error en la solicitud.");
+      }
+    } else {
+      setIsEditing(true);
+    }
   };
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,6 +99,8 @@ const EditableProfile = () => {
       </nav>
       <div className="bg-gray-900 text-white p-8 rounded-lg max-w-md mx-auto mt-10">
         <h2 className="text-2xl font-bold mb-6">Perfil de Usuario</h2>
+        {success && <p className="text-green-500">{success}</p>}
+        {error && <p className="text-red-500">{error}</p>}
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium">Nombre</label>
@@ -96,17 +132,7 @@ const EditableProfile = () => {
           </div>
           <div>
             <label className="block text-sm font-medium">Correo Electrónico</label>
-            {isEditing ? (
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="mt-1 p-2 w-full bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-indigo-500"
-              />
-            ) : (
-              <p className="mt-1">{formData.email}</p>
-            )}
+            <p className="mt-1">{formData.email}</p>
           </div>
           <button
             onClick={handleEditClick}
