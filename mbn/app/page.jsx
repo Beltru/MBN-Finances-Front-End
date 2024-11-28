@@ -5,6 +5,7 @@ import ScrollCards from "../components/Cards-Scroll";
 import Navbar from "../components/Navbar-Abajo";
 import Card from "../components/Carrousel";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Landing() {
   const [isFooterVisible, setFooterVisible] = useState(false);
@@ -47,19 +48,18 @@ export default function Landing() {
           ref={footerRef}
           className="flex flex-row items-center justify-center w-full bg-neutral-900 h-[100vh] px-[4%] py-[10%]"
         >
-          <div className="m-4 w-[45%] h-[75vh] rounded-md p-10">
-            <div className="text-[4.3vw] text-[#c2c1c1]">The only</div>
-            <div className="text-[4.3vw] text-[#c2c1c1] leading-[0.5] flex flex-row items-center justify-center">
-              Way
+          <div className="m-4 w-[65%] h-[75vh] rounded-md p-10">
+            <div className="text-[4.3vw] text-[#c2c1c1] leading-[0.8] flex flex-row items-center justify-center">
+             The best way
               <p className="font-[100] text-[1.5rem] mx-4 text-neutral-500 w-[6vw]">
-                ――――
+                ―――――
               </p>
-              To bank
+              To track
             </div>
             <div className="text-[4.3vw] ml-24 text-[#c2c1c1]">
-              Your bitcoin
+              Your finances
             </div>
-            <div className="flex items-center justify-around mt-20 border border-gray-600 hover:border-gray-400 duration-300 h-[30%]">
+            <div className="flex items-center justify-around mt-28 border border-gray-600 hover:border-gray-400 duration-300 h-[30%]">
               <p className="text-3xl">Start here</p>
               <Link href="./register">
                 <button className="px-6 py-4 border border-neutral-900 bg-neutral-800 rounded-full text-xl hover:bg-neutral-700 transition-all duration-300">
@@ -68,7 +68,9 @@ export default function Landing() {
               </Link>
             </div>
           </div>
-          <div className="m-4 border border-gray-600 w-[55%] h-[70vh] rounded-md p-10"></div>
+          <div className="m-4 flex items-center justify-center  w-[45%] h-[70vh] rounded-md p-10">
+          <Image src={"/mbn.png"} alt="" width={500} height={500} />
+          </div>
         </footer>
       </main>
     </div>
