@@ -121,7 +121,7 @@ export default function Home() {
           {/* Caja de Dinero en Cuenta */}
           <div className="row-span-1 row-start-2 col-span-4 col-start-1 flex flex-col items-center justify-between ">
             <div className="flex items-center bg-neutral-900 border-[#3c6edb] border-[12px] rounded-full w-[79%] h-[100%] justify-center">
-              <DineroCuenta name={"Money Available"} number={moneyAvailable} />
+              <DineroCuenta name={"Money Available"} number={237041} />
             </div>
           </div>
 
@@ -134,7 +134,7 @@ export default function Home() {
           {/* Caja de Resumen */}
           <div className="col-span-4 row-start-3">
             <Resumen
-              mes={monthlySummary.month}
+              mes={"August"}
               progress1={monthlySummary.progress1}
               progress2={monthlySummary.progress2}
             />

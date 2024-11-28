@@ -14,29 +14,42 @@ export default function Login() {
   const router = useRouter();
 
   const handleLogIn = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     const loginData = {
       email,
       password,
-      remember, 
     };
 
     try {
-      const response = await fetch("http://localhost:9000/auth/login", {
+      const response = await fetch("http://localhost:9000/auth/login",   
+ {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(loginData), 
+        body: JSON.stringify(loginData),
       });
 
       if (response.ok) {
-        const data = await response.json();
-        console.log("Login exitoso:", data);
-        localStorage.setItem("email", email);
-        setErrorMessage(""); // Limpiar el mensaje de error
-        router.push("/home");
+        const data = await response.json();   
+
+
+        if (data.token)   
+ {
+          // Securely store the token in HTTP-only cookie
+          document.cookie = `token=${data.token}; SameSite=Lax; HttpOnly; Secure`;
+          console.log("Login exitoso:", data);
+          localStorage.setItem("userId_epico", data.usuario.id);
+          console.log(data.usuario.id)
+          localStorage.setItem("email", email);
+          localStorage.setItem("token", data.token);
+          setErrorMessage(""); // Limpiar el mensaje de error
+          router.push("/home");
+        } else {
+          console.error("Login exitoso pero sin token:", data);
+          setErrorMessage("Unexpected server response. Please try again.");
+        }
       } else {
         const error = await response.json();
         console.error("Error de login:", error);
