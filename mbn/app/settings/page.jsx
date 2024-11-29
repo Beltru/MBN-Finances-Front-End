@@ -71,7 +71,7 @@ const EditableProfile = () => {
         });
   
         if (response.ok) {
-          setSuccess("Cambios guardados con éxito.");
+          setSuccess("Cambios guardados con éxito");
           setIsEditing(false);
         } else {
           const errorData = await response.json();
@@ -79,7 +79,7 @@ const EditableProfile = () => {
         }
       } catch (err) {
         console.error("Error en la solicitud:", err);
-        setError("Error en la solicitud.");
+        setError("Error en la solicitud");
       }
     } else {
       setIsEditing(true);
@@ -97,43 +97,43 @@ const EditableProfile = () => {
       <nav>
         <Navbar />
       </nav>
-      <div className="bg-gray-900 text-white p-8 rounded-lg max-w-md mx-auto mt-10">
-        <h2 className="text-2xl font-bold mb-6">Perfil de Usuario</h2>
-        {success && <p className="text-green-500">{success}</p>}
-        {error && <p className="text-red-500">{error}</p>}
+      <div className="bg-gray-900 text-white p-8 rounded-lg w-[60vw] mx-auto mt-10">
+        <h1 className="flex justify-center text-2xl font-bold mb-4">Perfil de Usuario</h1>
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium">Nombre</label>
+            <label className="block text-xl font-medium">Nombre</label>
             {isEditing ? (
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="mt-1 p-2 w-full bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-indigo-500"
+                className="mt-1 p-2 w-full bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-indigo-700"
               />
             ) : (
-              <p className="mt-1">{formData.name}</p>
+              <p className="mt-1 text-lg">{formData.name}</p>
             )}
           </div>
           <div>
-            <label className="block text-sm font-medium">Apellido</label>
+            <label className="block text-xl font-medium">Apellido</label>
             {isEditing ? (
               <input
                 type="text"
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="mt-1 p-2 w-full bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-indigo-500"
+                className="mt-1 p-2 w-full bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-indigo-700"
               />
             ) : (
-              <p className="mt-1">{formData.lastName}</p>
+              <p className="mt-1 text-lg">{formData.lastName}</p>
             )}
           </div>
           <div>
-            <label className="block text-sm font-medium">Correo Electrónico</label>
-            <p className="mt-1">{formData.email}</p>
+            <label className="block text-xl font-medium">Correo Electrónico</label>
+            <p className="mt-1 text-lg">{formData.email}</p>
           </div>
+          {success && <p className="text-green-500 mb-2">{success}</p>}
+          {error && <p className="text-red-500 mb-2">{error}</p>}
           <button
             onClick={handleEditClick}
             className="mt-4 w-full bg-[#2631cf] hover:bg-[#232981] transition-all duration-200 text-white py-2 px-4 rounded-md font-semibold"
