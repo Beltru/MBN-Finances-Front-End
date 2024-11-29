@@ -22,7 +22,7 @@ export const description = "An interactive line chart"
 const  chartData = [
   { date: "0", desktop: 0, mobile: 0 },
   { date: "2024-02", desktop: 91, mobile: 180 },
-  { date: "2024-03", desktop: 97, mobile: 189 },
+  { date: "2024-03", desktop: 300, mobile: 89 },
   { date: "2024-04", desktop: 167, mobile: 120 },
   { date: "2024-05", desktop: 242, mobile: 260 },
   { date: "2024-06", desktop: 373, mobile: 290 },
@@ -32,7 +32,7 @@ const  chartData = [
   { date: "2024-10", desktop: 59, mobile: 110 },
   { date: "2024-11", desktop: 261, mobile: 190 },
   { date: "2024-12", desktop: 327, mobile: 350 },
-  { date: "2024-01", desktop: 327, mobile: 350 },
+  { date: "2024-01", desktop: 427, mobile: 550 },
 ];
 
 
