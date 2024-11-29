@@ -10,7 +10,7 @@ import {
   CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
+  CardHeader, 
   CardTitle,
 } from "./ui/card"
 import {
@@ -23,12 +23,12 @@ import {
 export const description = "A bar chart with a label"
 
 const chartData = [
-  { date: "Monday", Money: 14312 },
+  { date: "Monday", Money: 12312 },
   { date: "Tuesday", Money: 8342 },
-  { date: "Wednesday", Money: 2550 },
+  { date: "Wednesday", Money: 4550 },
   { date: "Thursday", Money: 10973 },
-  { date: "Friday", Money: 19032 },
-  { date: "Saturday", Money: 16130 },
+  { date: "Friday", Money: 9032 },
+  { date: "Saturday", Money: 14130 },
   { date: "Sunday", Money: 9233 }
 ]
 
