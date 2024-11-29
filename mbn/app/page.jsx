@@ -48,15 +48,15 @@ export default function Landing() {
           ref={footerRef}
           className="flex flex-row items-center justify-center w-full bg-neutral-900 h-[100vh] px-[4%] py-[10%]"
         >
-          <div className="m-4 w-[65%] h-[75vh] rounded-md p-10">
-            <div className="text-[4.3vw] text-[#c2c1c1] leading-[0.8] flex flex-row items-center justify-center">
+          <div className="m-4 w-[70%] h-[75vh] rounded-md p-10">
+            <div className="text-[4.1vw] text-[#c2c1c1] leading-[0.7] flex flex-row items-center justify-center">
              The best way
-              <p className="font-[100] text-[1.5rem] mx-4 text-neutral-500 w-[6vw]">
-                ―――――
+              <p className="font-[300] text-[1.5rem] mx-2 mr-4 text-neutral-500 w-[6vw]">
+                ――――
               </p>
               To track
             </div>
-            <div className="text-[4.3vw] ml-24 text-[#c2c1c1]">
+            <div className="text-[4.1vw] ml-24 text-[#c2c1c1]">
               Your finances
             </div>
             <div className="flex items-center justify-around mt-28 border border-gray-600 hover:border-gray-400 duration-300 h-[30%]">

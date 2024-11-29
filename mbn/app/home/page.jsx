@@ -112,7 +112,7 @@ export default function Home() {
   }, [userId, token]);
 
   return (
-    <div className="mt-[10vh] p-8 h-[90vh] w-screen bg-gradient-to-r from-black via-gray-900 to-black text-white flex justify-center items-center overflow-hidden">
+    <div className="mt-[8vh] p-8 h-[92vh] w-screen bg-gradient-to-r from-black via-gray-900 to-black text-white flex justify-center items-center overflow-hidden">
       <nav>
         <Navbar />
       </nav>
